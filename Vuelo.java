@@ -10,6 +10,23 @@ public class Vuelo {
         this.telefono = telefono;
         this.hora = hora;
         this.ubicacion = ubicacion;
+        this.servicios = servicios;
+    }
+
+    public String getNombre() { 
+        return nombre; 
+    }
+
+    public int getTelefono() { 
+        return telefono; 
+    }
+
+    public int getHora() {
+        return hora; 
+    }
+
+    public String getUbicacion() { 
+        return ubicacion; 
     }
 
     public String getNombre() { return nombre; }
@@ -27,22 +44,16 @@ public class Vuelo {
     }
 
     public void mostrarInfo() {
-        System.out.println("Vuelo: " + nombre);
-        System.out.println("Teléfono: " + telefono);
+        System.out.println("--- DETALLE COMPLETO ---");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Ubicacion: " + ubicacion);
         System.out.println("Hora: " + hora);
-        System.out.println("Ubicación: " + ubicacion);
+        System.out.println("Telefono: " + telefono);
+        System.out.println("Servicios: " + servicios);
     }
 
-    public void mostrarInfo(boolean detallado) {
-        if (detallado) {
-            System.out.println("--- DETALLE COMPLETO ---");
-            System.out.println("Nombre: " + nombre);
-            System.out.println("Ubicacion: " + ubicacion);
-            System.out.println("Hora: " + hora);
-            System.out.println("Telefono: " + telefono);
-        } else {
-            mostrarInfo();
-        }
+    public void cambiarhora(int nueva_hora){
+        this.hora = nueva_hora;
     }
 
     public void mostrarInfo(String mensajePersonalizado) {
