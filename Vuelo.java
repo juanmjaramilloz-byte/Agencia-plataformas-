@@ -1,9 +1,10 @@
 public class Vuelo {
 
-    public String nombre;
-    public int telefono;
-    public int hora;
-    public String ubicacion;
+    private String nombre;
+    private int telefono;
+    private int hora;
+    private String ubicacion;
+
     public Vuelo(String nombre, int telefono, int hora, String ubicacion) {
         this.nombre = nombre;
         this.telefono = telefono;
@@ -11,11 +12,20 @@ public class Vuelo {
         this.ubicacion = ubicacion;
     }
 
-   
     public String getNombre() { return nombre; }
     public int getTelefono() { return telefono; }
     public int getHora() { return hora; }
     public String getUbicacion() { return ubicacion; }
+
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setUbicacion(String ubicacion) { this.ubicacion = ubicacion; }
+    public void setTelefono(int telefono) {
+        if (telefono > 0) this.telefono = telefono;
+    }
+    public void setHora(int hora) {
+        if (hora >= 0 && hora <= 23) this.hora = hora;
+    }
+
     public void mostrarInfo() {
         System.out.println("Vuelo: " + nombre);
         System.out.println("Teléfono: " + telefono);
@@ -35,7 +45,7 @@ public class Vuelo {
         }
     }
 
-
     public void mostrarInfo(String mensajePersonalizado) {
         System.out.println(mensajePersonalizado + " " + nombre);
     }
+}
